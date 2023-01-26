@@ -1,0 +1,85 @@
+.header-container {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.page-closesymbol {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  color:white;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: rgb(143, 143, 143);
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logo-container {
+  width: 100px;
+  position: relative; 
+}
+
+.logo-icon {
+  height: 60px; 
+}
+
+.post-label {
+  margin-top: 80px;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  color: orange;
+  padding-right: 5px;
+}
+
+.post-title {
+  display:inline;
+  font-size: 26px;
+  font-weight: 700;
+  color: rgb(91, 91, 91);
+}
+
+.author-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.author-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.author-name {
+  flex:1;
+  align-self: center;
+  font-weight: 700;
+  color: rgb(91, 91, 91);
+  padding-left: 10px;
+}
+
+.post-text {
+  display: flex;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: rgb(50, 50, 50);
+  font-weight: 400;
+  border-color: gray;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 3px -3px 5px rgb(161, 161, 161);
+}
+
+.presentation {
+
+}

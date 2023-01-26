@@ -1,0 +1,63 @@
+.testperformance-note {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  display:flex;
+  text-align: justify;
+  color: orange;
+  font-size: 10px;
+}
+
+.fast-nav-grid {
+  max-width: 450px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px;
+}
+
+.fast-nav-item {
+  padding: 2px;
+  font-size: 12px;
+}
+
+.fast-nav-item a {
+  text-decoration: none;
+  color: orange;
+}
+
+.test-performance-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr ;
+  row-gap: 3px;
+  padding: 5px;
+  border-style:none;
+  border-width: 2px;
+  border-radius: 2px;
+  border-color: rgb(193, 193, 193);
+  box-shadow: 2px -4px 10px rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 768px) {
+  .test-performance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  padding: 5px;
+  font-size: 12px;
+  color: orange;
+  background-color: lightblue;
+} 
+
+.iframe-flutter, .iframe-loads {
+  height: 165px;
+}
+
+
+.video {
+  padding: 5px;  
+  background-color: lightpink;
+  justify-self:center;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Performance</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaleo=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/MySite-general.css">
+    <link rel="stylesheet" href="styles/MySite-header.css">
+    <link rel="stylesheet" href="styles/MySite-footer.css">
+    <link rel="stylesheet" href="styles/MySite-testperformance.css">
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous">
+    </script>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="threedot-menu"></div>
+  
+      <div class="logo-container">
+        <img class="logo-icon" src="icons/logoicon.jpg">    
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutpage.html">About</a></li>
+        <li><a href="servicespage.html">Services</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="page-maintitle">Test Performance</div>
+      <div class="testperformance-note" id="testperformance-note" ></div>
+      <section>
+        <div class="fast-nav-grid">
+          <div class="fast-nav-item"><a href="#flutter">Flutter Testing</a></div>
+          <div class="fast-nav-item"><a href="#loads">Loads Testing</a></div>
+          <div class="fast-nav-item"><a href="#highalfa">High Alfa, Spins & Stalls Testing</a></div>
+          <div class="fast-nav-item"><a href="#stability">Stability & Control</a></div>
+          <div class="fast-nav-item"><a href="#weapon">Weapon & Payloads</a></div>
+          <div class="fast-nav-item"><a href="#release">Weapon & Release</a></div>
+          <div class="fast-nav-item"><a href="#systems">Systems</a></div>
+          <div class="fast-nav-item"><a href="#cfp">Captive Flight Profile</a></div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="test-performance-grid">
+          <div class="title" id="flutter">FLUTTER TESTS</div>
+          <div class="video">
+            <iframe class="iframe-flutter" src="https://www.youtube.com/embed/egDWh7jnNic"></iframe>
+          </div>
+          <div class="title" id="loads">LOADS TEST</div>
+          <div class="video">
+            <iframe class="iframe-loads" src="https://www.youtube.com/embed/CTvIBDyX4mA"></iframe>
+          </div>
+          <div class="title" id="highalfa">HIGH ALFA SPINS & STALLS TESTS</div>
+          <div class="video">
+            <iframe class="iframe-loads" src="https://www.youtube.com/embed/CTvIBDyX4mA"></iframe>
+          </div>
+          <div class="title" id="stability">STABILITY TESTS</div>
+          <div class="video"></div>
+          <div class="title" id="weapon">WEAPON CERRY TESTS</div>
+          <div class="video"></div>
+          <div class="title" id="release">WEAPON RELEASE TESTS</div>
+          <div class="video"></div>
+          <div class="title" id="systems"> SYSTEMS TESTS</div>
+          <div class="video"></div>
+          <div class="title" id="cfp">CFP TESTS</div>
+          <div class="video"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-container">
+      <div class="footer-about" id="footer-about"></div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="homepage.html">&#9755  Home</a></li>
+          <li><a href="aboutpage.html">&#9755  About</a></li>
+          <li><a href="servicespage.html">&#9755  Services</a></li>
+          <li><a href="#">&#9755  Posts</a></li>
+          <li><a href="#">&#9755  Contact Me</a></li>
+        </ul> 
+      </div>
+  
+      <div class="footer-contactme">
+        <p><a href="mailto:gideon.mendelson@gmail.com">&#128231 Send me email</a></p>
+        <p><img class="whatsapp-img" src="icons/whatsapp.svg"><a href="https://wa.me/0542479540"> Whatsapp Me</a></p>
+        <p><a href="Tel:0542479540">&#9990 Call me 0542479540</a></p>
+      </div>
+      <div class="footer-logo">
+        <img class="logo-icon" src="icons/logoicon.jpg" id="abouttitle.txt" onload="WriteText()"> 
+      </div>]
+    </footer>
+    
+    <script>
+      $(document).ready(function() {
+        $('.threedot-menu').click(function() {
+          $('.threedot-menu').toggleClass('active')
+          $('.overlay').toggleClass('active')
+          $('.menu').toggleClass('active')
+        })
+      });
+
+      function WriteText (filepath, boxid) {
+        jQuery.get(filepath, function(textmessage) {
+          document.getElementById(boxid).innerText=textmessage;
+        })        
+      }
+
+      WriteText ("textfiles/abouttitle.txt", "footer-about");
+      WriteText ("textfiles/testperformancenote.txt", "testperformance-note");
+
+    </script>
+    
+  </body>
+</html>

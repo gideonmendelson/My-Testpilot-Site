@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaleo=1.0">
+    <meta name="FLight Test" content="Flight testing experience-grid-title site">
+    <meta name="keywords" content="flight test, aircraft, airline, airplane, safety">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/MySite-general.css">
+    <link rel="stylesheet" href="styles/MySite-header.css">
+    <link rel="stylesheet" href="styles/MySite-homepage.css">
+    <link rel="stylesheet" href="styles/MySite-footer.css">
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous">
+    </script>
+
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="threedot-menu"></div>
+    
+      <div class="logo-container">
+        <img class="logo-icon" src="icons/logoicon.jpg">    
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutpage.html">About</a></li>
+        <li><a href="servicespage.html">Services</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="page-maintitle">Home Page</div>
+      <div class="intro-grid">
+        <div class="intro-info">
+          <div class="intro-name">Gideon Mendelson,
+             Test Pilot
+          </div>
+  
+          <div class="intro-service">
+            <p>Flight Tests</p>
+            <p>Flight Safety</p>
+            <p>Flight Test Safety</p>
+          </div>
+        </div>
+        <div class="intro-picture-container">
+          <img class="intro-picture fade" src="" id="image">
+        </div>  
+      </div>
+  
+      <div class="experience-grid">
+        <div class="experience-grid-title">In Numbers:</div>
+        <div>
+          <div class="in-numbers" id="counterlimit1">0</div>
+          <div class="numbers-title">Test Disciplines</div>
+        </div>
+  
+        <div>
+          <div class="in-numbers" id="counterlimit2">0</div>
+          <div class="numbers-title">Different Aitcraft</div>
+        </div>
+  
+        <div>
+          <div class="in-numbers" id="counterlimit3">0</div>
+          <div class="numbers-title">Test Experience Years</div>
+        </div>
+  
+        <div>
+          <div class="in-numbers" id="counterlimit4">0</div>
+          <div class="numbers-title">Flying Experience Years</div>
+        </div>
+      </div>
+    </main>
+
+    
+    <footer class="footer-container">
+      <div class="footer-about" id="footer-about"></div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="homepage.html">&#9755  Home</a></li>
+            <li><a href="aboutpage.html">&#9755  About</a></li>
+            <li><a href="servicespage.html">&#9755  Services</a></li>
+            <li><a href="#">&#9755  Posts</a></li>
+            <li><a href="#">&#9755  Contact Me</a></li>
+          </ul>
+  
+        </div>
+  
+        <div class="footer-contactme">
+          <p><a href="mailto:gideon.mendelson@gmail.com">&#128231 Send me email</a></p>
+          <p><img class="whatsapp-img" src="icons/whatsapp.svg"><a href="https://wa.me/0542479540"> Whatsapp Me</a></p>
+          <p><a href="Tel:0542479540">&#9990 Call me 0542479540</a></p>
+        </div>
+        <div class="footer-logo">
+          <img class="logo-icon" src="icons/logoicon.jpg" onload="AboutTitle()"> 
+        </div>
+    </footer>
+    
+    <script type="text/javascript">      
+      $(document).ready(function() {
+        $('.threedot-menu').click(function() {
+          $('.threedot-menu').toggleClass('active')
+          $('.overlay').toggleClass('active')
+          $('.menu').toggleClass('active')
+        })
+      });
+    
+      const image = document.getElementById('image');
+      let images = ['pictures/image1.jpg','pictures/image2.jpg',
+                    'pictures/image3.jpg','pictures/image4.jpg'];
+      
+      let slideindex = 0;
+      showslides();
+      
+      function showslides () {
+        if (slideindex >= images.length) {slideindex = 0};
+        image.src = images [slideindex];
+        setTimeout (showslides, 3000);
+        slideindex++;       
+      }
+    
+      function fourCounters(limit, counterid) {
+        const counterInterval=setInterval(counterTimer,200);
+        let counterDisplayElement = document.getElementById(counterid);
+        let i=0;
+        function counterTimer() {
+        if (i<limit) {
+          i++;
+          counterDisplayElement.innerHTML = "+" + i;
+        }
+        else {
+          myStopFunction();
+        }}
+      }
+      
+      fourCounters (8, "counterlimit1");
+      fourCounters (30, "counterlimit2");
+      fourCounters (30, "counterlimit3");
+      fourCounters (40, "counterlimit4");
+      
+      function AboutTitle() {
+        jQuery.get('textfiles/abouttitle.txt', function(data) {
+          document.getElementById("footer-about").innerText=data
+        })
+      };
+
+    </script>   
+  </body>
+</html>

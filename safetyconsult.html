@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Safety Consultancy</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaleo=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/MySite-general.css">
+    <link rel="stylesheet" href="styles/MySite-header.css">
+    <link rel="stylesheet" href="styles/MySite-footer.css">
+    <link rel="stylesheet" href="styles/MySite-safetyconsult.css">
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous">
+    </script>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="threedot-menu"></div>
+  
+      <div class="logo-container">
+        <img class="logo-icon" src="icons/logoicon.jpg">    
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutpage.html">About</a></li>
+        <li><a href="servicespage.html">Services</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="jumping-ball-container">
+        <canvas class="jumping-ball" id="mycanvas"></canvas>
+      </div>
+
+    </main>
+
+    <footer class="footer-container">
+      <div class="footer-about">
+        Gideon Mendelson, qualified test pilot and
+        civil pilot on Boeing aircraft and others.  Ex 
+        combat pilot in the IAF, expert in planning and performing 
+        test flights.  Also expert in flights and test flights safety management.
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="homepage.html">&#9755  Home</a></li>
+          <li><a href="aboutpage.html">&#9755  About</a></li>
+          <li><a href="servicespage.html">&#9755  Services</a></li>
+          <li><a href="#">&#9755  Posts</a></li>
+          <li><a href="#">&#9755  Contact Me</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-contactme">
+         <p><a href="mailto:gideon.mendelson@gmail.com">&#128231 Send me email</a></p>
+         <p><img class="whatsapp-img" src="icons/whatsapp.svg"><a href="https://wa.me/0542479540"> Whatsapp Me</a></p>
+         <p><a href="Tel:0542479540">&#9990 Call me 0542479540</a></p>
+      </div>
+      <div class="footer-logo">
+        <img class="logo-icon" src="icons/logoicon.jpg"> 
+      </div>
+    </footer>
+
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.threedot-menu').click(function() {
+          $('.threedot-menu').toggleClass('active')
+          $('.overlay').toggleClass('active')
+          $('.menu').toggleClass('active')
+        })
+      })
+
+      const canvas=document.getElementById('mycanvas');
+      const ctx=canvas.getContext('2d');
+     
+      const ball1= {
+        x:20, y:20
+      };
+
+      const ball2= {
+        x:100, y:60
+      };
+
+      const ball3= {
+        x:150, y:30
+      }
+
+      const rad=10;
+
+      let movex= 2;
+      let movey= 2;
+
+      let moveh=2;
+      let movev=2;
+
+      let movel=-2;
+      let moveud=2;
+
+
+      const drawball1 = () => {
+        ctx.clearRect (0,0, 600, 400);
+
+        if (ball1.x>canvas.width-rad || ball1.x<rad) movex=-movex;
+        if (ball1.y>canvas.height-rad|| ball1.y<rad) movey=-movey;
+
+        ball1.x += movex;
+        ball1.y += movey;
+
+
+        ctx.beginPath();
+        ctx.fillStyle='blue';
+        ctx.arc(ball1.x, ball1.y, rad, 0, Math.PI*2);
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      const drawball2 = () => {
+
+        if (ball2.x>canvas.width-rad || ball2.x<rad) moveh=-moveh;
+        if (ball2.y>canvas.height-rad|| ball2.y<rad) movev=-movev;
+
+        ball2.x += moveh;
+        ball2.y += movev;
+        
+        ctx.beginPath();
+        ctx.fillStyle='red';
+        ctx.arc(ball2.x, ball2.y, rad, 0, Math.PI*2);
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      const drawball3 = () => {
+
+        if (ball3.x>canvas.width-rad || ball3.x<rad) movel=-movel;
+        if (ball3.y>canvas.height-rad|| ball3.y<rad) moveud=-moveud;
+
+        ball3.x += movel;
+        ball3.y += moveud;
+
+        ctx.beginPath();
+        ctx.fillStyle='green';
+        ctx.arc(ball3.x, ball3.y, rad, 0, Math.PI*2);
+        ctx.fill();
+        ctx.closePath();
+      }
+    
+      setInterval(function(){
+        drawball1();
+        drawball2();
+        drawball3();
+      }, 10)
+
+    </script>
+    
+  </body>
+</html>

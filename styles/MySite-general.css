@@ -1,0 +1,33 @@
+p {
+  /*Eliminate the defaultes margins and set them to 0*/
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  body{
+    /*The styles below will be inherited
+    entire project*/
+    font-family: Heebo, Arial;
+    margin: 0px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color:white;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+
+  .page-maintitle {
+    margin-top: 80px;
+    display:inline-block;
+    text-align:left;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    color: orange;
+    font-weight: bold;
+    text-shadow: 3px -3px 3px rgb(177, 177, 177);
+  }

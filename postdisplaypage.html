@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <Head>
+    <title>Post Display Page</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaleo=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/MySite-general.css">
+    <link rel="stylesheet" href="styles/MySite-postdisplaypage.css">
+
+  </Head>
+
+  <body>
+    
+    <header class="header-container">
+      <div class="page-closesymbol" onclick="closeWin()">X</div>
+      
+      <div class="logo-container">
+        <img class="logo-icon" src="icons/logoicon.jpg">    
+      </div>
+    </header>
+    
+    <main>
+      <section>
+        <div class="post-label">Post Title:</div>
+        <div class="post-title">Handling Qualities Presentation</div>
+
+        <div class="author-container">
+          <div class="picture-div">
+            <img class="author-picture" id="authorpicture" src="icons/nopictureface.png">
+          </div>
+          <div class="author-name" id="authorname">J K Rollings</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="post-text" id="posttext">Presentation</div>
+      </section>
+    </main>
+
+    <script>
+
+      function closeWin() {
+        window.close();
+      }
+
+    </script>
+  </body>
+</html>

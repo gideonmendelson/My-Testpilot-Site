@@ -1,0 +1,41 @@
+.about-picture-title-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  border-style:none;
+  border-width: 2px;
+  border-radius: 2px;
+  border-color: rgb(193, 193, 193);
+  box-shadow: 2px -4px 10px rgb(184, 184, 184);
+}
+
+.about-picture {
+  background-color: rgb(246, 246, 246);
+  padding: 5px;
+}
+
+.about-img {
+  width: 80px;
+  height: 65px;
+  border-radius: 50%;  
+}
+
+.about-title {
+  flex: 1;
+  padding: 10px;
+  background-color: rgb(246, 246, 246);
+  color: orange;
+  font-size: 22px;
+  text-align: justify;
+  opacity: 0;
+  transition: 3s;
+}
+
+.about-data {
+  display: flex;
+  background-color: rgb(246, 246, 246);
+  color: orange;
+  padding: 10px;
+  opacity: 0;
+  transition: 3s;
+}

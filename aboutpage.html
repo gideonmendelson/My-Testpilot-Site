@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About Page</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaleo=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;700&family=Roboto:ital,wght@0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/MySite-general.css">
+    <link rel="stylesheet" href="styles/MySite-header.css">
+    <link rel="stylesheet" href="styles/MySite-footer.css">
+    <link rel="stylesheet" href="styles/MySite-aboutpage.css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous">
+    </script>
+
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="threedot-menu"></div>
+    
+      <div class="logo-container">
+        <img class="logo-icon" src="icons/logoicon.jpg">    
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutpage.html">About</a></li>
+        <li><a href="servicespage.html">Services</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="page-maintitle">About</div>
+      <div class="about-picture-title-container">
+        <div class="about-picture">
+          <img class="about-img" src="pictures/MyPicture1.jpg" onload="AboutTitle()">
+        </div>
+        <div class="about-title" id="about-title"></div>  
+      </div>
+
+      <div class="about-data" id="about-data">About Data</div>    
+
+    </main>
+
+    <footer class="footer-container">
+      <div class="footer-about" id="footer-about"></div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="homepage.html">&#9755  Home</a></li>
+          <li><a href="aboutpage.html">&#9755  About</a></li>
+          <li><a href="servicespage.html">&#9755  Services</a></li>
+          <li><a href="#">&#9755  Posts</a></li>
+          <li><a href="#">&#9755  Contact Me</a></li>
+        </ul>
+  
+      </div>
+  
+      <div class="footer-contactme">
+        <p><a href="mailto:gideon.mendelson@gmail.com">&#128231 Send me email</a></p>
+        <p><img class="whatsapp-img" src="icons/whatsapp.svg"><a href="https://wa.me/0542479540"> Whatsapp Me</a></p>
+        <p><a href="Tel:0542479540">&#9990 Call me 0542479540</a></p>
+      </div>
+      
+      <div class="footer-logo">
+        <img class="logo-icon" src="icons/logoicon.jpg"> 
+      </div>
+    </footer>
+
+      
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.threedot-menu').click(function() {
+          $('.threedot-menu').toggleClass('active')
+          $('.overlay').toggleClass('active')
+          $('.menu').toggleClass('active')
+        })
+      });
+          
+      window.onload = function() {
+        document.getElementById("about-title").style.opacity = 1;
+        document.getElementById("about-data").style.opacity = 1;       
+      }
+           
+      function AboutTitle() {
+        jQuery.get('textfiles/abouttitle.txt', function(data) {
+          document.getElementById("about-title").innerText=data;
+          document.getElementById("footer-about").innerText=data
+        })
+      };
+      
+    </script> 
+  </body>
+</html>
